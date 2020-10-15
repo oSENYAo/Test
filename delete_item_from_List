@@ -1,0 +1,43 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace Ref_VarElement
+{
+  class Program
+        {
+        
+        static List<int> Work (List<int> list, int value)
+        {
+            List<int> list2 = new List<int>();
+            foreach (var item in list)
+            {
+                if (item != value)
+                {
+                    list2.Add(item);
+                }
+            }
+            return list2;
+        }
+         static void Show_elements(List<int> list)
+        {
+            foreach (var item in list)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+        }
+
+        static void Main(string[] args)
+          {
+            List<int> vs = new List<int> { 12, 41, 4, 123, 12, 4, 123, 12 };
+            Show_elements(vs);
+            Console.WriteLine("Number for delete: ");
+            var number = int.Parse(Console.ReadLine());
+            Console.WriteLine("After proccess: ");
+            var list = Work(vs, number);
+            Show_elements(list);
+          }
+        
+        }
+}
